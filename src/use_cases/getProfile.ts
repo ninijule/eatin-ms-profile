@@ -1,5 +1,5 @@
 import Application from "../repositories/profile";
-import GetApplicationRequest from "../types/requests/getApplicationRequest";
+import GetApplicationRequest from "../types/requests/getProfileRequest";
 
 export default async (request: GetApplicationRequest) => {
     try {

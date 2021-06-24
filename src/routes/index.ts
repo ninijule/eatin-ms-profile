@@ -1,10 +1,10 @@
 import RouterConfig from "../types/utils/routerConfig";
-import applicationRouter from "./application";
+import profileRouter from "./profile";
 
-const application: RouterConfig = {
-  router: applicationRouter,
-  path: "/application",
+const profile: RouterConfig = {
+  router: profileRouter,
+  path: "/profile",
 };
 
 
-export default [application];
+export default [profile];

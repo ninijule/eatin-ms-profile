@@ -1,29 +1,63 @@
 import mongoose from "../db/mongodb/index";
 
 const Schema = mongoose.Schema;
+
 const ProfileSchema = new Schema({
     fullName: {
-        type: String,
-        required: true,
-        minlength: 0,
-        maxlength: 50
+        firstName: {
+            type: String,
+            required: true,
+            minlength: 0,
+            maxlength: 25
+        },
+        lastName: {
+            type: String,
+            required: true,
+            minlength: 0,
+            maxlength: 25
+        }
     },
-    tel: {
+    phoneNumber: {
         type: String,
         required: true,
-        maxlength: 255
+        maxlength: 15
     },
     address: {
-        type: String,
-        required: true,
-        minlength: 0,
+        street: {
+            type: String,
+            required: true,
+            maxlength: 30
+        },
+        city: {
+            type: String,
+            required: true,
+            maxlength: 30
+        },
+        state: {
+            type: String,
+            uppercase: true,
+            required: true,
+            maxlength: 20
+        },
+        zip: Number
     },
     sponsorCode: {
-        
+        type: String,
+        required: true,
+        default: null,
+    },
+    sponsor: {
+        type: String,
+        required: true,
+        default: null,
+    },
+    userID: {
+        type: String,
+        required: true,
+        default: null,
     }
-
 });
 
-const Application = mongoose.model("Application", ApplicationSchema);
+const Profile = mongoose.model("Profile", ProfileSchema);
 
-export default Application;
+export default Profile;

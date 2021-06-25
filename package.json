@@ -8,11 +8,11 @@
     "start": "node dist/app.js",
     "build-start": "npm run build && npm run start",
     "dockerize": "npm run docker-stop | npm run docker-rm | npm run docker-build",
-    "docker-stop": "docker stop eatin-ms-application || rem",
-    "docker-rm": "docker rm eatin-ms-application || rem",
-    "docker-build": "docker build -t eatin-ms-application .",
-    "docker-run": "docker run -d -p 3000:3000 --name eatin-ms-application eatin-ms-application",
-    "kube-clean": "kubectl delete deployment eatin-ms-application-deployment | kubectl delete service eatin-ms-application-service | kubectl delete configmap api-configmap",
+    "docker-stop": "docker stop eatin-ms-profile || rem",
+    "docker-rm": "docker rm eatin-ms-profile || rem",
+    "docker-build": "docker build -t eatin-ms-profile .",
+    "docker-run": "docker run -d -p 3000:3000 --name eatin-ms-profile eatin-ms-profile",
+    "kube-clean": "kubectl delete deployment eatin-ms-profile-deployment | kubectl delete service eatin-ms-profile-service | kubectl delete configmap api-configmap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

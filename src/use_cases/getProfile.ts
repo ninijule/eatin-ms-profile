@@ -1,7 +1,7 @@
 import Profile from "../repositories/profile";
-import GetprofileRequest from "../types/requests/getProfileRequest";
+import GetProfileRequest from "../types/requests/getProfileRequest";
 
-export default async (request: GetprofileRequest) => {
+export default async (request: GetProfileRequest) => {
     try {
         return await Profile.findById(request.id);
     } catch (error) {

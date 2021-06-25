@@ -6,7 +6,6 @@ import getAllProfile from "../use_cases/getAllProfile";
 import CreateProfileRequest from "../types/requests/createProfileRequest";
 import DeleteProfileRequest from "../types/requests/deleteProfileRequest";
 import GetProfileRequest from "../types/requests/getProfileRequest";
-import GetAllProfileRequest from "../types/requests/getAllProfileRequest";
 import UpdateProfileRequest from "../types/requests/updateProfileRequest";
 import updateProfile from "../use_cases/updateProfile";
 
@@ -78,10 +77,8 @@ export default {
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const request: GetAllProfileRequest = {
-    }
 
-    return res.status(200).json(await getAllProfile(request));
+    return res.status(200).json(await getAllProfile());
 
   },
   updateProfile: async (req: any, res: any) => {

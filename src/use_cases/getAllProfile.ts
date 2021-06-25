@@ -1,9 +1,8 @@
-import Application from "../repositories/profile";
-import GetAllApplicationRequest from "../types/requests/getAllProfileRequest";
+import Profile from "../repositories/profile";
 
-export default async (request: GetAllApplicationRequest) => {
+export default async () => {
     try {
-        return await Application.find();
+        return await Profile.find();
     } catch (error) {
         return false;
     }

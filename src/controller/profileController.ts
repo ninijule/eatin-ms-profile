@@ -91,8 +91,19 @@ export default {
     }
     const request: UpdateProfileRequest = {
       id: req.params.id,
-      name: req.body.name,
-      description: req.body.description
+      fullName: {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
+      },
+      phoneNumber: req.body.phoneNumber,
+      address: {
+        street: req.body.street,
+        city: req.body.city,
+        state: req.body.state,
+        zip: req.body.zip
+      },
+      sponsorCode: req.body.sponsorCode,
+      sponsor: req.body.sponsor
     }
 
     if (await updateProfile(request)) {

@@ -44,6 +44,13 @@ router.get(
 );
 
 
+router.get(
+  "/:id",
+
+  profileController.getProfile
+);
+
+
 router.put(
   "/:id",
 

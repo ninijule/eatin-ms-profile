@@ -21,15 +21,12 @@ router.post(
 
   body("zip").escape().isNumeric(),
 
-  body("sponsorCode").escape().isLength({ min: 0, max: 50 }).notEmpty(),
-
   body("sponsor").escape().isLength({ min: 0, max: 50 }),
 
-  body("userID").escape().isNumeric(),
+  body("userId").escape().isNumeric(),
 
   profileController.createProfile
 );
-
 
 router.delete(
   "/:id",
@@ -40,16 +37,14 @@ router.delete(
 router.get(
   "/",
 
-  profileController.getAllProfile
+  profileController.getSelfProfile
 );
-
 
 router.get(
   "/:id",
 
   profileController.getProfile
 );
-
 
 router.put(
   "/:id",
@@ -68,16 +63,7 @@ router.put(
 
   body("zip").escape().isNumeric(),
 
-  body("sponsorCode").escape().isLength({ min: 0, max: 50 }).notEmpty(),
-
-  body("sponsor").escape().isLength({ min: 0, max: 50 }),
-
-  body("userID").escape().isNumeric(),
-
   profileController.updateProfile
 );
-
-
-
 
 export default router;

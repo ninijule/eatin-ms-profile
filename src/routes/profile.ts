@@ -37,7 +37,7 @@ router.delete(
 router.get(
   "/",
 
-  profileController.getSelfProfile
+  profileController.getSelfProfileOrSearch
 );
 
 router.get(

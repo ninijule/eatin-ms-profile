@@ -9,6 +9,8 @@ import GetProfileRequest from "../types/requests/getProfileRequest";
 import UpdateProfileRequest from "../types/requests/updateProfileRequest";
 import updateProfile from "../use_cases/updateProfile";
 import GetSelfProfileRequest from "../types/requests/getSelfProfileRequest";
+import SearchProfileRequest from "../types/requests/searchProfileRequest";
+import searchProfile from "../use_cases/searchProfile";
 
 export default {
   createProfile: async (req: any, res: any) => {
@@ -67,10 +69,22 @@ export default {
     }
     return res.sendStatus(404);
   },
-  getSelfProfile: async (req: any, res: any) => {
+  getSelfProfileOrSearch: async (req: any, res: any) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
+    }
+
+    if (Object.keys(req.query).length > 0) {
+      const request: SearchProfileRequest = {};
+
+      if (req.query.userId != undefined) {
+        request.userId = <string>req.query.userId;
+      }
+
+      if (Object.keys(request).length > 0) {
+        return res.status(200).json(await searchProfile(request));
+      }
     }
 
     const request: GetSelfProfileRequest = {

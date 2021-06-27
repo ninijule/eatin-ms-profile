@@ -2,7 +2,8 @@ name: Deploy to AKS
 on:
   push:
     branches:
-      - main
+      - master
+      - develop
 env:
   REGISTRY_NAME: eatin
   APP_NAME: eatin-ms-profile

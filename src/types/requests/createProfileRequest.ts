@@ -10,7 +10,6 @@ export default interface CreateProfileRequest {
     state: String;
     zip: Number;
   };
-  sponsorCode: String;
   sponsor: String;
   userId: String;
 }

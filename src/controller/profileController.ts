@@ -33,7 +33,6 @@ export default {
           state: req.body.state,
           zip: req.body.zip,
         },
-        sponsorCode: req.body.sponsorCode,
         sponsor: req.body.sponsor,
         userId: req.body.userId,
       };
@@ -98,6 +97,10 @@ export default {
 
         if (req.query.userId != undefined) {
           request.userId = <string>req.query.userId;
+        }
+
+        if (req.query.sponsorCode != undefined) {
+          request.sponsorCode = <string>req.query.sponsorCode;
         }
 
         if (Object.keys(request).length > 0) {

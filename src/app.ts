@@ -13,7 +13,7 @@ routers.forEach((router: RouterConfig) => {
   app.use(router.path, router.router);
 });
 
-app.use((err: any, req: any, res: any, next: any) => {
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   if (!(err instanceof BaseError)) {
     err = BaseError.fromError(err);
   }

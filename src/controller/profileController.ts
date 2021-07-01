@@ -51,7 +51,7 @@ export default {
       }
 
       const request: DeleteProfileRequest = {
-        id: req.params.id,
+        id: JSON.parse(<string>req.headers.user).id,
       };
 
       await deleteProfile(request);
@@ -69,7 +69,7 @@ export default {
       }
 
       const request: GetProfileRequest = {
-        id: req.params.id,
+        id: JSON.parse(<string>req.headers.user).id,
       };
 
       const result = await getProfile(request);

@@ -5,10 +5,6 @@ import UpdateProfileRequest from "../types/requests/updateProfileRequest";
 export default async (request: UpdateProfileRequest) => {
   const profile = await Profile.findById(request.id);
 
-  if (profile.id != request.profileId) {
-    throw new NotAuthorizedError();
-  }
-
   profile.fullName.firstName = request.fullName.firstName;
   profile.fullName.lastName = request.fullName.lastName;
   profile.phoneNumber = request.phoneNumber;

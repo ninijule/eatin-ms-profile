@@ -69,7 +69,7 @@ export default {
       }
 
       const request: GetProfileRequest = {
-        id: JSON.parse(<string>req.headers.user).id,
+        id: req.params.id,
       };
 
       const result = await getProfile(request);
@@ -124,7 +124,7 @@ export default {
         return res.status(400).json({ errors: errors.array() });
       }
       const request: UpdateProfileRequest = {
-        id: req.params.id,
+        id: JSON.parse(<string>req.headers.user).id,
         fullName: {
           firstName: req.body.firstName,
           lastName: req.body.lastName,
@@ -136,7 +136,6 @@ export default {
           state: req.body.state,
           zip: req.body.zip,
         },
-        profileId: JSON.parse(<string>req.headers.user).id,
       };
 
       await updateProfile(request);

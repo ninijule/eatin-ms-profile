@@ -11,5 +11,4 @@ export default interface UpdateProfileRequest {
     state: String;
     zip: Number;
   };
-  profileId: String;
 }

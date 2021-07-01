@@ -1,5 +1,4 @@
 import Profile from "../repositories/profile";
-import NotAuthorizedError from "../types/errors/notAuthorizedError";
 import UpdateProfileRequest from "../types/requests/updateProfileRequest";
 
 export default async (request: UpdateProfileRequest) => {

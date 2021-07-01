@@ -29,7 +29,7 @@ router.post(
 );
 
 router.delete(
-  "/:id",
+  "/",
 
   profileController.deleteProfile
 );
@@ -47,7 +47,7 @@ router.get(
 );
 
 router.put(
-  "/:id",
+  "/",
 
   body("firstName").escape().isLength({ min: 1, max: 50 }),
 
